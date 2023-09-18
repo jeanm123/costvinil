@@ -1,1 +1,37 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <form id="formulario">
+            <label for="ancho">Ancho:</label><br>
+            <input type="number" id="ancho" name="ancho" placeholder="0" ><br>
+            <label for="alto">Alto:</label><br>
+            <input type="number" id="alto" name="alto"  placeholder="0"><br><br>
+            <select id="opciones" name="opciones">
+              </select><br><br>
+            <input type="button" onclick="agregarFila()" id="agregar" value="Agregar">
+          </form> 
+          <br><br>
+    
+          <table id="miTabla">
+            <tr>
+                <th>Cantidad</th>
+                <th>Nombre</th>
+                <th>Medida</th>
+                <th>Costo de Material</th>
+                <th>Acción</th>
+            </tr>
+        </table>
+        <br>
+        <p>Suma total: <span id="total">0 SOLES</span></p>
+    </div>
+    
+    <script src="scripts/funciones.js"></script>
+</body>
+</html>
