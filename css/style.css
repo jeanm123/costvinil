@@ -134,3 +134,8 @@ table {
   button:hover {
     background-color: rgb(138, 138, 138);
   }
+
+  div.scroll {
+    white-space: nowrap; /* Evita el salto de línea */
+    overflow-x: scroll; /* Desplazamiento horizontal */
+  }
