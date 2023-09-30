@@ -7,6 +7,7 @@ let alto= document.getElementById("alto")
 
 let costo_material=0;
 let nombre_opcion='';
+let costo_material_real=0
 let sumaTotal = 0;
 let tabla = document.getElementById("miTabla");
 let lista = document.getElementById("lista");
@@ -18,15 +19,80 @@ totalCell.style.fontSize='20px'
 // ancho.value=0
 // alto.value=0
 
+
+// se agrega 5 soles mas por metro para cubrir gastos fijos de alquiler, agua, luz,internet,pasaje,almuerzo, pago de material
+// alos materiales que vienen 1.50m se agrega 10 soles por metro
+let datos = [
+  {
+    id: 1,
+    nombre: "Vinil Gloss",
+    costo: 220,
+    aumento:220,
+    formula: (60*(50*100))-60*(9*100)
+  },
+  {
+    id: 2,
+    nombre: "Vinil Reflectivo",
+    costo: 500,
+    aumento:200,
+    formula: (60*(50*100))-60*(9*100)
+  },
+  {
+    id: 3,
+    nombre: "Vinil Cromado",
+    costo: 500,
+    aumento:200,
+    formula: (60*(50*100))-60*(9*100)
+  },
+  {
+    id: 4,
+    nombre: "Polarizado Económico",
+    costo: 120,
+    aumento:200,
+    formula: (50*(60*100))-60*(9*100)
+  },
+  {
+    id: 5,
+    nombre: "Polarizado DRS",
+    costo: 250,
+    aumento:200,
+    formula: (50*(60*100))-60*(9*100)
+  },
+  {
+    id: 6,
+    nombre: "Fibra de Carbono 3D",
+    costo: 350,
+    aumento:300,
+    formula: (150*(30*100))-60*(9*100)
+  },
+  {
+    id: 7,
+    nombre: "Fibra de Carbono 4D",
+    costo: 400,
+    aumento:300,
+    formula: (150*(30*100))-60*(9*100)
+  },
+  {
+    id: 8,
+    nombre: "Vinil Panorámico",
+    costo: 390,
+    aumento:200,
+    formula: (150*(18*100))-60*(9*100)
+  }
+];
+
+
+
 function resetForm() {
   formulario.reset();
   var firstOption = opciones.options[0];
-  var valor = firstOption.value;
-  var nombre = firstOption.text;
+  console.log(firstOption.value)
+  let dato = datos.find(dato => dato.id === parseInt(firstOption.value));
 
-  // Asignar los valores a las variables
-  nombre_opcion = nombre;
-  costo_material = valor / ((60*(50*100))-60*(9*100));
+  // // Asignar los valores a las variables
+  nombre_opcion = dato.nombre;
+  costo_material = (dato.costo+dato.aumento) / ((60*(50*100))-60*(9*100));
+  costo_material_real = dato.costo / ((60*(50*100))-60*(9*100));
 
 }
 let obtenerSumaTotal = () => {
@@ -70,19 +136,22 @@ const altoValue = alto.value;
     let celda3 = nuevaFila.insertCell(2);
     let celda4 = nuevaFila.insertCell(3);
     let celda5 = nuevaFila.insertCell(4);
+    let celda6 = nuevaFila.insertCell(5);
 
     celda1.innerHTML = nuevaFila.rowIndex + 0;
     celda2.innerHTML = nombre_opcion;
     celda3.innerHTML = ancho.value +' cm '+' x ' + alto.value + ' cm '
     celda4.innerHTML = Math.ceil((parseFloat(ancho.value * alto.value) * parseFloat(costo_material)) * 10) / 10; 
-    celda5.innerHTML = "<button class='btn-eliminar ' type='button'>Eliminar</button>";
-
+    celda5.innerHTML = Math.ceil((parseFloat(ancho.value * alto.value) * parseFloat(costo_material_real)) * 10) / 10; 
+    celda6.innerHTML = "<button class='btn-eliminar ' type='button'>Eliminar</button>";
+    
+    console.log(ancho.value)
+    console.log(alto.value)
+    console.log(costo_material)
     obtenerSumaTotal();
     
     
     resetForm();
-    // nombre_opcion='Vinil Gloss'
-    // costo_material=240/(60*(50*100))
     
 };
 
@@ -102,87 +171,28 @@ tabla.addEventListener('click', function(e) {
 });
 let cambiaropciones =(event)=>{
    // Obtiene el valor de la opción seleccionada
-   let valor = event.target.value;
-let nombre = event.target.options[event.target.selectedIndex].text; 
 
-
-//    console.log(valor); // Imprime el valor en la consola
-// se resta 9cm por metro cuadrado para restar los 3 cm de margen por lado
-   switch (nombre) {
-    case "Vinil Gloss":
-        nombre_opcion=nombre
-        costo_material=valor/((60*(50*100))-60*(9*100))
-
-      break;
-    case "Vinil Reflectivo":
-        nombre_opcion=nombre
-      costo_material=valor/((60*(50*100))-60*(9*100))
-      break;
-      
-    case "Vinil Cromado":
-        nombre_opcion=nombre
-      costo_material=valor/((60*(50*100))-60*(9*100))
-      break;
-      
-    case "Polarizado Económico":
-        nombre_opcion=nombre
-      costo_material=valor/((50*(60*100))-60*(9*100))
-      break;
-      
-    case "Polarizado DRS":
-        nombre_opcion=nombre
-      costo_material=valor/((50*(60*100))-60*(9*100))
-      break;
-      
-    case "Fibra de Carbono 3D":
-        nombre_opcion=nombre
-      costo_material=valor/((150*(30*100))-60*(9*100))
-      break;
-      
-    case "Fibra de Carbono 4D":
-        nombre_opcion=nombre
-      costo_material=valor/((150*(30*100))-60*(9*100))
-      break;
-      
-    case "Vinil Panorámico":
-        nombre_opcion=nombre
-      costo_material=valor/(150*(18*100))
-      break;
-      
-    default:
-      console.log("El valor no es ni manzana ni banana");
-  }
-}
-
-let resultado = () =>{
+   let idSeleccionado = event.target.value;
+  let dato = datos.find(dato => dato.id === parseInt(idSeleccionado));
+   nombre_opcion = dato.nombre
+   costo_material= (dato.costo+dato.aumento)/dato.formula
+   costo_material_real = dato.costo/dato.formula
+  
 
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
    
-    // se agrega 5 soles mas por metro para cubrir gastos fijos de alquiler, agua, luz,internet,pasaje,almuerzo, pago de material
-    // alos materiales que vienen 1.50m se agrega 10 soles por metro
-    
-    var datos = {
-        "Vinil Gloss": 440, //costo de material es de 220
-        "Vinil Reflectivo": 700, //costo de masterial 500
-        "Vinil Cromado": 700, //costo de material 500
-        "Polarizado Económico": 320, //costo de material 120
-        "Polarizado DRS": 450, //costo de material 250
-        "Fibra de Carbono 3D": 650, //costo de rollo 350
-        "Fibra de Carbono 4D": 700, //costo de rollo 400
-        "Vinil Panorámico": 690, //costo de rollo 390
-      };
-
+  
     // Llena el select con los datos
-    for (var valor in datos) {
-        if (datos.hasOwnProperty(valor)) {
-          var opcion = document.createElement("option");
-          opcion.text = valor;
-          opcion.value = datos[valor];
-          opciones.appendChild(opcion);
-        }
-      }
+
+    datos.forEach(function(objeto) {
+      let opcion = document.createElement("option");
+      opcion.value = objeto.id;
+      opcion.text = objeto.nombre;
+      opciones.appendChild(opcion);
+    });
 
     cambiaropciones({target: opciones});
     opciones.addEventListener('change',cambiaropciones)
