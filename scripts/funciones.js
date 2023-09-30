@@ -26,7 +26,7 @@ function resetForm() {
 
   // Asignar los valores a las variables
   nombre_opcion = nombre;
-  costo_material = valor / (60 * (50 * 100));
+  costo_material = valor / ((60*(50*100))-60*(9*100));
 
 }
 let obtenerSumaTotal = () => {
