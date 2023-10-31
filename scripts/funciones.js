@@ -94,14 +94,14 @@ let datos = [
     id: 10,
     nombre: "Vinil Impreso",
     costo: 25,
-    aumento:10,
+    aumento:0,
     formula: (150*(1*100))
   },
   {
     id: 11,
     nombre: "Vinil Impreso Plastificado",
     costo: 35,
-    aumento:10,
+    aumento:0,
     formula: (150*(1*100))
   }
 ];
