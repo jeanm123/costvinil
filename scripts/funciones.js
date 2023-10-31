@@ -22,62 +22,87 @@ totalCell.style.fontSize='20px'
 
 // se agrega 5 soles mas por metro para cubrir gastos fijos de alquiler, agua, luz,internet,pasaje,almuerzo, pago de material
 // alos materiales que vienen 1.50m se agrega 10 soles por metro
+// el primer elemento es el ancho del material, el segundo es el largo total del material,el numero 100 es para convertir si esta en metros a centimetros
+//60 que viene despues del 100 es el ancho del material , 9 es la cantidad de centimetros a descontar y 100 es para copnvertir a centimetros
+//la ultima parte es para descontar los centimetros al material
+//(60*(50*100))-60*(9*100)
 let datos = [
   {
     id: 1,
-    nombre: "Vinil Gloss",
+    nombre: "Vinil Gloss MGFILMS",
     costo: 220,
     aumento:220,
     formula: (60*(50*100))-60*(9*100)
   },
   {
-    id: 2,
+    id:2,
+    nombre: "Vinil Gloss MCCAL",
+    costo: 260,
+    aumento:220,
+    formula: (121*(25*100))-60*(9*100)
+  },
+  {
+    id: 3,
     nombre: "Vinil Reflectivo",
     costo: 500,
     aumento:200,
     formula: (60*(50*100))-60*(9*100)
   },
   {
-    id: 3,
+    id: 4,
     nombre: "Vinil Cromado",
     costo: 500,
     aumento:200,
     formula: (60*(50*100))-60*(9*100)
   },
   {
-    id: 4,
+    id: 5,
     nombre: "Polarizado Económico",
     costo: 120,
     aumento:200,
     formula: (50*(60*100))-60*(9*100)
   },
   {
-    id: 5,
+    id: 6,
     nombre: "Polarizado DRS",
     costo: 250,
     aumento:200,
     formula: (50*(60*100))-60*(9*100)
   },
   {
-    id: 6,
+    id: 7,
     nombre: "Fibra de Carbono 3D",
     costo: 350,
     aumento:300,
     formula: (150*(30*100))-60*(9*100)
   },
   {
-    id: 7,
+    id: 8,
     nombre: "Fibra de Carbono 4D",
     costo: 400,
     aumento:300,
     formula: (150*(30*100))-60*(9*100)
   },
   {
-    id: 8,
+    id: 9,
     nombre: "Vinil Panorámico",
     costo: 390,
     aumento:200,
     formula: (150*(18*100))-60*(9*100)
+  },
+  {
+    id: 10,
+    nombre: "Vinil Impreso",
+    costo: 25,
+    aumento:10,
+    formula: (150*(1*100))
+  },
+  {
+    id: 11,
+    nombre: "Vinil Impreso Plastificado",
+    costo: 35,
+    aumento:10,
+    formula: (150*(1*100))
   }
 ];
 
