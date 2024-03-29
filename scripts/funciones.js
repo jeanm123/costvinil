@@ -103,6 +103,20 @@ let datos = [
     costo: 35,
     aumento:0,
     formula: (150*(1*100))
+  },
+  {
+    id: 12,
+    nombre: "Vinil M. Cromado",
+    costo: 45,
+    aumento:0,
+    formula: (150*(1*100))
+  },
+  {
+    id: 13,
+    nombre: "Vinil L. China",
+    costo: 60,
+    aumento:0,
+    formula: (150*(1*100))
   }
 ];
 
