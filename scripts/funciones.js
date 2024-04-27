@@ -117,6 +117,20 @@ let datos = [
     costo: 60,
     aumento:0,
     formula: (150*(1*100))
+  },
+  {
+    id: 14,
+    nombre: "Fibra Carbono Camaleon",
+    costo: 50,
+    aumento:0,
+    formula: (150*(1*100))
+  },
+  {
+    id: 15,
+    nombre: "Vinil Fotocromatico Moldeable",
+    costo: 25,
+    aumento:0,
+    formula: (150*(1*100))
   }
 ];
 
