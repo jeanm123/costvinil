@@ -127,6 +127,13 @@ let datos = [
   },
   {
     id: 15,
+    nombre: "Fibra Carbono negro 3D LR",
+    costo: 22,
+    aumento:0,
+    formula: (150*(1*100))
+  },
+  {
+    id: 16,
     nombre: "Vinil Fotocromatico Moldeable",
     costo: 25,
     aumento:0,
