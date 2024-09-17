@@ -64,76 +64,92 @@ let datos = [
   },
   {
     id: 6,
-    nombre: "Polarizado DRS",
+    nombre: "Polarizado Taiwan DRS",
     costo: 250,
     aumento:200,
     formula: (50*(60*100))-60*(9*100)
   },
   {
     id: 7,
+    nombre: "Polarizado TurboFilm Corean",
+    costo: 220,
+    aumento:0,
+    formula: (75*(30*100))
+  },
+  {
+    id: 8,
+    nombre: "Polarizado NanoFilm Corean",
+    costo: 590,
+    aumento:0,
+    formula: (150*(30*100))-60*(9*100)
+  },
+  
+  
+  {
+    id: 9,
     nombre: "Fibra de Carbono 3D",
     costo: 350,
     aumento:300,
     formula: (150*(30*100))-60*(9*100)
   },
   {
-    id: 8,
+    id: 10,
     nombre: "Fibra de Carbono 4D",
     costo: 400,
     aumento:300,
     formula: (150*(30*100))-60*(9*100)
   },
   {
-    id: 9,
+    id:11,
     nombre: "Vinil Panorámico",
     costo: 390,
     aumento:200,
     formula: (150*(18*100))-60*(9*100)
   },
   {
-    id: 10,
+    id: 12,
     nombre: "Vinil Impreso",
     costo: 25,
     aumento:0,
     formula: (150*(1*100))
   },
   {
-    id: 11,
+    id: 13,
     nombre: "Vinil Impreso Plastificado",
     costo: 35,
     aumento:0,
     formula: (150*(1*100))
   },
   {
-    id: 12,
+    id: 14,
     nombre: "Vinil M. Cromado",
     costo: 45,
     aumento:0,
     formula: (150*(1*100))
   },
   {
-    id: 13,
+    id: 15,
     nombre: "Vinil L. China",
     costo: 60,
     aumento:0,
     formula: (150*(1*100))
   },
   {
-    id: 14,
+    id: 16,
     nombre: "Fibra Carbono Camaleon",
     costo: 50,
     aumento:0,
     formula: (150*(1*100))
   },
   {
-    id: 15,
+    id: 17,
     nombre: "Fibra Carbono negro 3D LR",
     costo: 22,
     aumento:0,
     formula: (150*(1*100))
   },
   {
-    id: 16,
+    id: 18,
     nombre: "Vinil Fotocromatico Moldeable",
     costo: 25,
     aumento:0,
