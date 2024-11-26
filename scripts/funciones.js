@@ -73,14 +73,14 @@ let datos = [
     id: 7,
     nombre: "Polarizado TurboFilm Corean",
     costo: 220,
-    aumento:0,
-    formula: (75*(30*100))-60*(9*100)
+    aumento:200,
+    formula: (75*(30*100))
   },
   {
     id: 8,
     nombre: "Polarizado NanoFilm Corean",
     costo: 590,
-    aumento:0,
+    aumento:500,
     formula: (150*(30*100))-60*(9*100)
   },
 
@@ -88,8 +88,8 @@ let datos = [
     id: 9,
     nombre: "Polarizado Nanocarbono taiwan",
     costo: 225,
-    aumento:0,
-    formula: (150*(30*100))-60*(9*100)
+    aumento:200,
+    formula: (150*(15*100))
   },
   
   
@@ -112,8 +112,8 @@ let datos = [
     id: 12,
     nombre: "Fibra de Carbono 5D",
     costo: 295,
-    aumento:300,
-    formula: (150*(30*100))-60*(9*100)
+    aumento:250,
+    formula: (150*(9*100))
   },
   {
     id:13,
@@ -127,56 +127,56 @@ let datos = [
     nombre: "Vinil Impreso",
     costo: 25,
     aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    formula: (150*(1*100))
   },
   {
     id: 15,
     nombre: "Vinil Impreso Plastificado",
     costo: 35,
     aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    formula: (150*(1*100))
   },
   {
     id: 16,
     nombre: "Vinil M. Cromado",
     costo: 45,
-    aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    aumento:40,
+    formula: (150*(1*100))
   },
   {
     id: 17,
     nombre: "Vinil L. China",
     costo: 60,
-    aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    aumento:50,
+    formula: (150*(1*100))
   },
   {
     id: 18,
     nombre: "Fibra Carbono Camaleon",
     costo: 50,
-    aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    aumento:40,
+    formula: (150*(1*100))
   },
   {
     id: 19,
     nombre: "Fibra Carbono negro 3D LR",
     costo: 22,
-    aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    aumento:20,
+    formula: (150*(1*100))
   },
   {
     id: 20,
     nombre: "Vinil Fotocromatico Moldeable",
     costo: 25,
-    aumento:0,
-    formula: (150*(1*100))-60*(9*100)
+    aumento:20,
+    formula: (150*(1*100))
   },
   {
     id: 21,
     nombre: "Vinil Verde Tornasol",
     costo: 65,
-    aumento:0,
-    formula: (120*(1*100))-60*(9*100)
+    aumento:50,
+    formula: (120*(1*100))
   }
 ];
 
