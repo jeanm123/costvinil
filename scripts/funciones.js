@@ -176,7 +176,7 @@ let datos = [
     nombre: "Vinil Verde Tornasol",
     costo: 65,
     aumento:0,
-    formula: (150*(1*100))
+    formula: (120*(1*100))
   }
 ];
 
