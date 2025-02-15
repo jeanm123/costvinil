@@ -146,15 +146,15 @@ let datos = [
   {
     id: 17,
     nombre: "Vinil L. China",
-    costo: 60,
-    aumento:50,
+    costo: 35,
+    aumento:30,
     formula: (150*(1*100))
   },
   {
     id: 18,
     nombre: "Fibra Carbono Camaleon",
     costo: 50,
-    aumento:40,
+    aumento:30,
     formula: (150*(1*100))
   },
   {
@@ -177,6 +177,13 @@ let datos = [
     costo: 65,
     aumento:50,
     formula: (120*(1*100))
+  },
+  {
+    id: 22,
+    nombre: "Vinil Militar Camuflado",
+    costo: 30,
+    aumento:30,
+    formula: (150*(1*100))
   }
 ];
 
