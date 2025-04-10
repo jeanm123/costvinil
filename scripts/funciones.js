@@ -158,28 +158,42 @@ let datos = [
     formula: (150*(1*100))
   },
   {
-    id: 19,
+    id: 20,
+    nombre: "Fibra Carbono negro 3D SINGCAL",
+    costo: 260.10,
+    aumento:150,
+    formula: (127*(50*100))
+  },
+  {
+    id: 21,
     nombre: "Fibra Carbono negro 3D LR",
     costo: 22,
     aumento:20,
     formula: (150*(1*100))
   },
   {
-    id: 20,
+    id: 22,
     nombre: "Vinil Fotocromatico Moldeable",
     costo: 25,
     aumento:20,
     formula: (150*(1*100))
   },
   {
-    id: 21,
+    id: 23,
+    nombre: "Vinil tornasol",
+    costo: 15,
+    aumento:10,
+    formula: (60*(1*100))
+  },
+  {
+    id: 24,
     nombre: "Vinil Verde Tornasol",
     costo: 65,
     aumento:50,
     formula: (120*(1*100))
   },
   {
-    id: 22,
+    id: 25,
     nombre: "Vinil Militar Camuflado",
     costo: 30,
     aumento:30,
