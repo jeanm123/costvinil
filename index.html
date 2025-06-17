@@ -1,40 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotización Viniles</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="main">
-        <form id="formulario">
-            <label for="ancho">Ancho:</label><br>
-            <input type="number" id="ancho" name="ancho" placeholder="0" ><br>
-            <label for="alto">Alto:</label><br>
-            <input type="number" id="alto" name="alto"  placeholder="0"><br><br>
-            <select id="opciones" name="opciones">
-              </select><br><br>
-            <input type="button" onclick="agregarFila()" id="agregar" value="Agregar">
-          </form> 
-          <br><br>
-          <div class="scroll">
-            <table id="miTabla">
-                <tr>
-                    <th>Cantidad</th>
-                    <th>Nombre</th>
-                    <th>Medida</th>
-                    <th>P. Material</th>
-                    <th>P. Material R.</th>
-                    <th>Acción</th>
-                </tr>
-            </table>
-          </div>
-          
-        <br>
-        <p>Suma total: <span id="total">0 SOLES</span></p>
+<body class="bg-gray-900 text-white font-sans p-4">
+  <div class="container mx-auto max-w-5xl bg-gray-800 rounded-2xl p-6 shadow-2xl">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-400">Calculadora de Viniles</h1>
+
+    <form id="formulario" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+      <div>
+        <label for="ancho" class="block text-sm font-semibold mb-1">Ancho (cm):</label>
+        <input type="number" id="ancho" name="ancho" placeholder="0"
+          class="w-full rounded-xl px-4 py-2 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label for="alto" class="block text-sm font-semibold mb-1">Alto (cm):</label>
+        <input type="number" id="alto" name="alto" placeholder="0"
+          class="w-full rounded-xl px-4 py-2 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label for="opciones" class="block text-sm font-semibold mb-1">Material:</label>
+        <select id="opciones" name="opciones"
+          class="w-full rounded-xl px-4 py-2 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </select>
+      </div>
+      <div class="col-span-1 sm:col-span-3">
+        <input type="button" onclick="agregarFila()" id="agregar" value="Agregar"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition" />
+      </div>
+    </form>
+
+    <div class="overflow-x-auto bg-gray-700 rounded-xl shadow-inner">
+      <table id="miTabla" class="min-w-full text-sm text-left">
+        <thead class="bg-gray-600 text-white">
+          <tr>
+            <th class="px-4 py-2">Cantidad</th>
+            <th class="px-4 py-2">Nombre</th>
+            <th class="px-4 py-2">Medida</th>
+            <th class="px-4 py-2">P. Material</th>
+            <th class="px-4 py-2">P. Material R.</th>
+            <th class="px-4 py-2">Acción</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-600"></tbody>
+      </table>
     </div>
-    
-    <script src="scripts/funciones.js"></script>
+
+    <div class="mt-6 text-right text-xl font-bold text-green-400">
+      Suma total: <span id="total">0 SOLES</span>
+    </div>
+
+    <!-- Botón para abrir el modal flotante -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <button onclick="document.getElementById('modalCalculadora').classList.remove('hidden')"
+        class="bg-indigo-600 text-white px-6 py-3 rounded-full shadow-xl hover:bg-indigo-700 transition font-semibold">
+        Cinta Reflectiva
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal flotante -->
+  <div id="modalCalculadora" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden px-4 py-8">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative text-gray-800">
+      <!-- Botón de cerrar -->
+      <button onclick="document.getElementById('modalCalculadora').classList.add('hidden')"
+        class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold">
+        &times;
+      </button>
+
+      <h2 class="text-2xl font-bold text-center mb-6 text-indigo-600">Costo por Rectángulos</h2>
+
+      <label for="rectangulos" class="block font-medium mb-2">Cantidad de rectángulos (15 cm):</label>
+      <input id="rectangulos" type="number" min="1" placeholder="Ej: 10"
+        class="w-full p-3 border border-gray-300 rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+      <button onclick="calcular()"
+        class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition">
+        Calcular
+      </button>
+
+      <div id="resultado" class="mt-6 text-gray-700 hidden">
+        <p><strong>Precio total:</strong> <span id="precio"></span> soles</p>
+        <p><strong>Metros necesarios:</strong> <span id="metros"></span> m</p>
+        <p><strong>Precio por rectángulo:</strong> 2.25 soles</p>
+      </div>
+    </div>
+  </div>
+
+<script src="scripts/funciones.js">
+   
+  </script>
 </body>
 </html>
